@@ -39,11 +39,13 @@ sudo unattended-upgrades -d
 
 
 # INSTALLATION OF KALI-ANONSURF : https://github.com/Und3rf10w/kali-anonsurf
+# I will try to fork this & fix all the errors soon :)
+echo " "
+echo "Anonsurf Install : https://github.com/Und3rf10w/kali-anonsurf/ "
+echo " "
 
 git clone https://github.com/Und3rf10w/kali-anonsurf ~/./Kali-Anonsurf
-
 cd ~/Kali-Anonsurf/
-
 sudo sh installer.sh
 
 echo "Anonsurf has been successfully installed!"
@@ -51,7 +53,7 @@ echo "Anonsurf has been successfully installed!"
 # KALI-ANONSURF INSTALLED, PROCEED.
 
 while true; do
-    read -p "Start anonsurf? (y/N) " yn
+    read -p "Start anonsurf? !! May slow the rest of this process down !! (y/N) " yn
     case $yn in
         [Yy]* ) sudo anonsurf start;;
         [Nn]* ) break;;
@@ -59,6 +61,16 @@ while true; do
     esac
 done
 
+# PIMPMYKALI : https://github.com/Dewalt-arch/pimpmykali.git
 
+echo " "
+echo "PimpMyKali Install : https://github.com/Dewalt-arch/pimpmykali.git/ "
+echo " "
+
+git clone https://github.com/Dewalt-arch/pimpmykali.git ~/./PimpMyKali
+cd ~/PimpMyKali/
+sudo sh pimpmykali.sh
+
+# PIMPMYKALI INSTALLED, PROCEED.
 
 echo "this is a test lol"
