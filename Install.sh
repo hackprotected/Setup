@@ -37,48 +37,27 @@ sudo add-apt-repository deb http://http.kali.org/kali kali-rolling main contrib 
 apt install -y secure-delete wipe nwipe glances ufw gufw yubioath-desktop chromium firefox-esr keepassxc
 sudo unattended-upgrades -d
 
-while true; do
-    read -p "Install Kali Linux toolsets? everything (e) large (l)  " yn
-    case $yn in
-        [Ee]* ) apt install kali-linux-everything;;
-        [Ll]* ) exit;;
-        * ) break;;
-    esac
-done
 
 # INSTALLATION OF KALI-ANONSURF : https://github.com/Und3rf10w/kali-anonsurf
 
-git clone https://github.com/Und3rf10w/kali-anonsurf ~/Kali-Anonsurf
+git clone https://github.com/Und3rf10w/kali-anonsurf ~/./Kali-Anonsurf
 
-cd ~/Kali-Anonsurf
+cd ~/Kali-Anonsurf/
 
-rm -r /etc/apt/sources.list.d/i2p.list
-
-rm /tmp/i2p-debian-repo.key.asc
-apt update
-
-if [[ -n $(cat /etc/os-release |grep kali) ]]
-then
-	apt install libservlet3.0-java 
-	wget http://ftp.us.debian.org/debian/pool/main/j/jetty8/libjetty8-java_8.1.16-4_all.deb
-	apt install libjetty8-java_8.1.16-4_all.deb
-	apt install libecj-java libgetopt-java libservlet3.0-java glassfish-javaee ttf-dejavu i2p i2p-router libjbigi-jni
-	apt -f install
-fi
-
-apt install -y i2p-keyring
-apt install -y secure-delete tor i2p
-
-apt install kali-anonsurf-deb-src/ kali-anonsurf.deb
-apt install kali-anonsurf.deb || (apt -f install && apt install kali-anonsurf.deb)
-
-anonsurf help
+sudo sh installer.sh
 
 echo "Anonsurf has been successfully installed!"
 
 # KALI-ANONSURF INSTALLED, PROCEED.
 
-
+while true; do
+    read -p "Start anonsurf? (y/N) " yn
+    case $yn in
+        [Yy]* ) sudo anonsurf start;;
+        [Nn]* ) break;;
+        * ) break;;
+    esac
+done
 
 
 
