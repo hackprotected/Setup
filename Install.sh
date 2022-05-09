@@ -40,13 +40,13 @@ sudo unattended-upgrades -d
 sudo service bluetooth start
 
 
-# INSTALLATION OF KALI-ANONSURF : https://github.com/Und3rf10w/kali-anonsurf
-# I will try to fork this & fix all the errors soon :) -- Update: I have forked it, working out the errors on https://github.com/hackprotected/kali-anonsurf
+# INSTALLATION OF KALI-ANONSURF : https://github.com/hackprotected/kali-anonsurf
+# I will try to fork this & fix all the errors soon :) -- Update: I have forked it, working out the errors on https://github.com/hackprotected/kali-anonsurf Update no.2: I DID IT OMG MY CODE WORKS WOOOOOO
 echo " "
-echo "Anonsurf Install : https://github.com/Und3rf10w/kali-anonsurf/ "
+echo "Anonsurf Install : https://github.com/hackprotected/kali-anonsurf/ -- Original credits to https://github.com/Und3rf10w/ "
 echo " "
 
-git clone https://github.com/Und3rf10w/kali-anonsurf ~/./Kali-Anonsurf
+git clone https://github.com/hackprotected/kali-anonsurf ~/./Kali-Anonsurf
 cd ~/Kali-Anonsurf/
 sudo sh installer.sh
 
