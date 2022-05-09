@@ -34,12 +34,14 @@ echo " "
 sudo macchanger -r wlan0 eth0
 echo " "
 sudo add-apt-repository deb http://http.kali.org/kali kali-rolling main contrib non-free
-apt install -y secure-delete wipe nwipe glances ufw gufw yubioath-desktop chromium firefox-esr keepassxc
+apt install -y secure-delete bluez-tools btscanner wipe nwipe glances ufw gufw yubioath-desktop chromium firefox-esr keepassxc bluez blueman bluetooth bluez-alsa-utils bluez-dbgsym bluez-firmware thunar mousepad
+apt remove -y bluez-cups bluez-cups-dbgsym  
 sudo unattended-upgrades -d
+sudo service bluetooth start
 
 
 # INSTALLATION OF KALI-ANONSURF : https://github.com/Und3rf10w/kali-anonsurf
-# I will try to fork this & fix all the errors soon :)
+# I will try to fork this & fix all the errors soon :) -- Update: I have forked it, working out the errors on https://github.com/hackprotected/kali-anonsurf
 echo " "
 echo "Anonsurf Install : https://github.com/Und3rf10w/kali-anonsurf/ "
 echo " "
